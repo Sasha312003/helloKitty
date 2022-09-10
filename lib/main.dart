@@ -49,6 +49,7 @@ class TaskList extends StatelessWidget{
           TaskItem(label: ':0'),
           TaskItem(label: 'TT'),
           TaskItem(label: ':P'),
+          TaskItem(label: 'у меня закончились уву'),
         ],
     );
   }
