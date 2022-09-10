@@ -18,7 +18,7 @@ class MyHomePage extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
     appBar: AppBar(
-    title: Text('uwu'),
+    title: Text('UwU'),
     ),
       body: Column(
         children: [
@@ -53,17 +53,27 @@ class TaskList extends StatelessWidget{
   }
 }
 
-class TaskItem extends StatelessWidget{
+class TaskItem extends StatefulWidget{
   final String label;
+
   const TaskItem({Key? key, required this.label}): super(key: key);
+
+  @override
+  State<TaskItem> createState() => _TaskItemState();
+}
+
+class _TaskItemState extends State<TaskItem> {
+  bool? _value = false;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Checkbox(onChanged: null, value: false),
-        Text(label),
+        Checkbox(onChanged: (newValue) => setState(() => _value = newValue),
+            value: _value),
+        Text(widget.label),
       ],
     );
   }
-  }
+}
 
